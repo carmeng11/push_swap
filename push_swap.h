@@ -18,6 +18,7 @@ t_stack *ft_stacknew(int n);
 //void ft_lstclear(t_stack *lst, void (*del)(void *));
 //t_stack *ft_lstlast(t_stack *lst);
 t_stack *ft_stacklast(t_stack *stack);
+int ft_stacksize(t_stack *stack);
 
 
 #endif
