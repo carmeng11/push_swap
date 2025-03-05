@@ -6,7 +6,7 @@ void ft_stackadd_back(t_stack **alst, t_stack *new) //añade el nodo new al fina
 	
 	/* using ft_lstlast to get the last element of the list
 	*/
-	last = ft_stacklast(*alst);
+	last = ft_stacklast(*alst);//accedemos al ultimo nodo de la lista
 	/* if last is NULL, there is no list, so we set the list pointer
 	* to point to the new element
 	*/

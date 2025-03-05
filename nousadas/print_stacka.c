@@ -13,5 +13,6 @@ int	main(int argc, char **argv)
 		printf("%d\n", n);
 		i++;
 	}
+	printf("El número de nodos es%d:", i);
 	return (0);
 }								

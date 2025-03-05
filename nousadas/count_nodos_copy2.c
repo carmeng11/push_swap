@@ -3,33 +3,16 @@
 #include <stdlib.h>
 #include "push_swap.h"
 
-// int	init_stack(int argc, char **argv, t_stack **stack)
-// {
-// 	int	i;
-// 	int	n;
-
-// 	i = 1;
-// 	while (i < argc)
-// 	{
-// 		n = atoi(argv[i]);
-// 		ft_stackadd_back(stack, ft_stacknew(n)); //hacemos que n sea el nuevo nodo creado
-// 		i++;
-// 	}
-// 	return (1);
-// }	
-int	init_stack(int argc, char **argv, t_stack **stack)
+int	main(int argc, char **argv)
 {
 	int	i;
 	int	n;
-	t_stack	*new;
 
 	i = 1;
 	while (i < argc)
 	{
 		n = atoi(argv[i]);
-		new = ft_stacknew(n);
-		ft_stackadd_back(stack, new); //hacemos que n sea el nuevo nodo creado 
-									//void ft_stackadd_back(t_stack **alst, t_stack *new)
+		ft_stackadd_back(stack, ft_stacknew(n));
 		i++;
 	}
 	return (1);
@@ -43,7 +26,7 @@ int main(int argc, char **argv)
     t_stack *stack_a = malloc(sizeof(t_stack)); // Reserva memoria para el primer nodo
 	if (!stack_a)
 		return (1);
-	init_stack(argc - 1, argv, &stack_a);// en init_stack mis argumentos los convierto a estructuras
+	init_stack(argc - 1, argv, &stack_a);
    
     int i = 0;
     t_stack *current = stack_a; // Usar un puntero temporal para recorrer la lista
@@ -56,7 +39,8 @@ int main(int argc, char **argv)
 		//printf("%d\n", current->n);
 		i++;
 	}
-       printf("Número de nodos: %d\n", i);
+   
+    printf("Número de nodos: %d\n", i);
 
     //Liberar memoria
 	//ft_lstclear(stack_a, free);
