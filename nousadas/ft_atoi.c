@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <limits.h>
 
 int	ft_isdigit(int c)
 {
@@ -11,7 +12,7 @@ int	ft_str_isdigit(char *str)
 {
 	while (*str)
 	{
-		printf("%c\n", *str);
+		//printf("%c\n", *str);
 		if (!(ft_isdigit(*str)))
 			return (0);
 		str++;
@@ -20,35 +21,38 @@ int	ft_str_isdigit(char *str)
 }
 int	ft_atoi_push(char *str)
 {
-	int result = 0;
+	long long int result = 0;
 	int sign = 1;
 
-	if (*str == '-')
+	if (*str == '-' || *str == '+')
 	{
-		sign = -1;
+		if (*str == '-')
+			sign = -1;
 		str++;
 	}
+	
 	if (!(*str >= '0' && *str <= '9'))
     {
         printf("Error\n");
         return (0);
     }
-	while (*str >= '0' && *str <= '9')
+	while (*str)
 	{
+		if (!(ft_str_isdigit(str)))
+    	{
+			printf("Error\n");
+			return (0);
+    	}
 		result = result * 10 + *str - '0';
+		if ((sign * result) < INT_MIN || (sign * result) > INT_MAX)
+		{
+			printf("Error\n");
+			return (0);
+		}
 		str++;
 	}
-    if (!(ft_str_isdigit(str)))
-    {
-        printf("Error\n");
-        return (0);
-    }
-    // else if (!(sign * result) >= -2147483648 && (sign * result) <= 2147483647)
-	// {
-    //     printf("Error\n");
-    //     return (0);
-    // }
-    return (sign * result);
+  
+	return (sign * result);
 }
 
 int	main (int argc, char **argv)
