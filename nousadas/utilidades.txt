@@ -1,3 +1,0 @@
-Para configurar el nombre de usuario y el email para los nuevos repositorios.
-git config user.name "11carmengr (portatil)"
-git config user.email "11carmengr@gmail.com"
