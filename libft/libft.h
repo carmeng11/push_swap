@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cagomez- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 20:31:24 by cagomez-          #+#    #+#             */
-/*   Updated: 2024/09/29 18:09:39 by cagomez-         ###   ########.fr       */
+/*   Updated: 2025/03/10 18:41:23 by cagomez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
-int     ft_str_isdigit(char *str);
-
+int		ft_str_isdigit(char *str);
 
 #endif
