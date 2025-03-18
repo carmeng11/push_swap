@@ -1,13 +1,13 @@
 NAME        = push_swap
 
 CC          = cc
-CFLAGS      = -Wall -Werror -Wextra -I./includes -I libft -I printf# -fsanitize=address -g3
+CFLAGS      = -Wall -Werror -Wextra -I./includes -I libft -I printf
 LIBFT_DIR   = ./libft
 PRINT_DIR   = ./printf
 LIBS        = -L$(LIBFT_DIR) -lft -L$(PRINT_DIR) -lftprintf
 SRCS        = src/main.c src/ft_stackadd_back.c src/ft_stacklast.c src/ft_stacknew.c \
               src/ft_stacksize.c src/ft_error.c src/ft_check_duplicates.c \
-			  src/ft_atoi_push.c src/ft_stackclear.c
+			  src/ft_atoi_push.c src/ft_stackdelone.c src/ft_stackclear.c
 
 
 OBJS         = $(SRCS:.c=.o)
