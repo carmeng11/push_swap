@@ -91,34 +91,34 @@ char	**ft_split(char const *s, char c)
 }*/
 
 
-int	ft_first_string(int argc, char **argv)
-{
+// int	ft_first_string(int argc, char **argv)
+// {
 	
-	int	i;
-	i = 0;
+// 	int	i;
+// 	i = 0;
 	
-	if (argc > 2)
-	{
-		while (argv[1][i] != '\0')
-		{
-			if (argv[1][i] == ' ')
-				return (ft_error(), 1);
-			i++;
-		}
-	} 
-    return (1);
-}
+// 	if (argc > 2)
+// 	{
+// 		while (argv[1][i] != '\0')
+// 		{
+// 			if (argv[1][i] == ' ')
+// 				return (ft_error(), 1);
+// 			i++;
+// 		}
+// 	} 
+//     return (1);
+// }
 
-/*int	ft_check_split_dup(char **argv)
-{
-	char	**nums;
-	nums = NULL;
-	nums = ft_split(argv[1], ' ');
-	if ((ft_check_duplicates(nums)))
-			return (ft_error(), 1);
-	free(nums);
-	return (0);
-}*/
+// int	ft_check_split_dup(char **argv)
+// {
+// 	char	**nums;
+// 	nums = NULL;
+// 	nums = ft_split(argv[1], ' ');
+// 	if ((ft_check_duplicates(nums)))
+// 			return (ft_error(), 1);
+// 	free(nums);
+// 	return (0);
+// }
 
 /*char	**ft_split_dup(char **argv)
 {
@@ -142,31 +142,15 @@ int	init_stack(int argc, char **argv, t_stack **stack)
 	int	n;
 	char	**nums;
 	nums = NULL;
-	/*
-		i = 0;
-	if (argc > 2)
-	{
-		while (argv[1][i] != '\0')
-		{
-			if (argv[1][i] == ' ')
-				return (ft_error(), 1);	
 
-			i++;
-		}
-	} */
-	
 	i = 1;	
 	while (i < argc) 
 	{
-		//if ((ft_check_duplicates(argv)))
-				//return (ft_error(), 1);
 		j = 0;
 		nums = ft_split(argv[i], ' ');
-		if ((ft_check_duplicates(nums)))
-				return (ft_error(), 1);
 		while (nums[j])
 		{	
-			//ft_printf("%s\n", nums[j]);
+			ft_printf("%s\n", nums[j]);
 			n = ft_atoi_push(nums[j]);
 			new = ft_stacknew(n); 
 			ft_stackadd_back(stack, new);
@@ -174,6 +158,7 @@ int	init_stack(int argc, char **argv, t_stack **stack)
 			j++;
 		}
         free(nums);
+		ft_check_duplicates(stack);
 		i++;
 	}
 	return (1);
@@ -185,18 +170,9 @@ int main(int argc, char **argv)
 	t_stack *stack_a = malloc(sizeof(t_stack)); // Reserva memoria para el primer nodo
 	if (!stack_a)
 		return (1);
-	ft_first_string(argc, argv);
-	if ((ft_check_duplicates(argv)))
-				return (ft_error(), 1);
+	//ft_first_string(argc, argv);//gestiona que si tengo más de un argumento y el primero sea un string donde hay que aplicar split para separar espacios de error
     init_stack(argc, argv, &stack_a);// en init_stack mis argumentos los convierto a enodos de la estructura del stack_a
 	ft_stackclear(&stack_a);
-
-	/*while (num[i])
-	{
-		n = ft_atoi_push(num[i]);
-		printf("%d\n", n);
-		i++;
-	}*/
-	
+	//continuar con push_swap( meter algoritmos)	
 	return 0;
 }

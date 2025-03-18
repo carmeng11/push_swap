@@ -136,22 +136,42 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (0);
 }
 
-int ft_check_duplicates(char **nums)
+// int ft_check_duplicates(char **nums)
 
+// {
+// 	int i = 0;
+//     while (nums[i]) 
+//     {
+//         int j = i + 1; // Para evitar comparar con el mismo elemento
+//         while (nums[j]) {
+//             if (ft_strcmp(nums[i], nums[j]) == 0)
+//             {
+//                 //return (ft_error(), 1); // Encontramos un duplicado
+//                 return (1);
+//             }
+//             j++;
+//         }
+//         i++;
+//     }
+//     return 0; // No hay duplicados
+// }
+
+int	ft_check_duplicates(t_stack **stack_a)
 {
-	int i = 0;
-    while (nums[i]) 
-    {
-        int j = i + 1; // Para evitar comparar con el mismo elemento
-        while (nums[j]) {
-            if (ft_strcmp(nums[i], nums[j]) == 0)
-            {
-                //return (ft_error(), 1); // Encontramos un duplicado
-                return (1);
-            }
-            j++;
-        }
-        i++;
-    }
-    return 0; // No hay duplicados
+	t_stack	*current;
+	t_stack	*temp;
+
+	current = *stack_a;
+	while (current != NULL)
+	{
+		temp = current->next;
+		while (temp != NULL)
+		{
+			if (current->n == temp->n)
+				return (ft_error(), 1);
+			temp = temp->next;
+		}
+		current = current->next;
+	}
+    return (0);
 }
