@@ -12,7 +12,7 @@
 typedef struct  s_stack
 {
     int n;
-    void    *content; 
+    //void    *content; 
     struct s_stack *next;
 } t_stack;
 

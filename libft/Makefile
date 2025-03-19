@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cagomez- <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/24 19:50:15 by cagomez-          #+#    #+#              #
-#    Updated: 2024/09/26 19:40:33 by cagomez-         ###   ########.fr        #
+#    Updated: 2025/03/19 18:26:16 by cagomez-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 RM = rm -rf
 CC = cc
-CFLAGS = -Werror -Wall -Wextra
+CFLAGS = -Werror -Wall -Wextra -g
 LIB = ar -rcs
 SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 	ft_isprint.c ft_memcpy.c ft_memset.c ft_strlen.c ft_tolower.c \

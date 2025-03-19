@@ -14,7 +14,7 @@ t_stack *ft_stacklast(t_stack *stack)  //devuelve el último nodo de la lista
 	* if we looped over the element directly like for ft_lstsize
 	* we would be returning NULL every time
 	*/
-	while (tmp->next) //tenemos que decir mientras exista un siguiente nodo pq sino nos daría el ultimo null
+	while (tmp->next != NULL) //tenemos que decir mientras exista un siguiente nodo pq sino nos daría el ultimo null
 		tmp = tmp->next;
 	return (tmp);
 }

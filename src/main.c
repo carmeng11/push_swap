@@ -158,18 +158,17 @@ int	init_stack(int argc, char **argv, t_stack **stack)
 			j++;
 		}
         free(nums);
-		ft_check_duplicates(stack);
 		i++;
 	}
+	ft_check_duplicates(stack);
 	return (1);
 }
 
 
 int main(int argc, char **argv)
 {
-	t_stack *stack_a = malloc(sizeof(t_stack)); // Reserva memoria para el primer nodo
-	if (!stack_a)
-		return (1);
+	t_stack *stack_a; // Reserva memoria para el primer nodo
+	stack_a = NULL;
 	//ft_first_string(argc, argv);//gestiona que si tengo más de un argumento y el primero sea un string donde hay que aplicar split para separar espacios de error
     init_stack(argc, argv, &stack_a);// en init_stack mis argumentos los convierto a enodos de la estructura del stack_a
 	ft_stackclear(&stack_a);

@@ -4,15 +4,22 @@ void ft_stackadd_back(t_stack **alst, t_stack *new) //añade el nodo new al fina
 {
 	t_stack *last;
 	
+	if (new == NULL)
+		return ;
 	/* using ft_lstlast to get the last element of the list
 	*/
-	last = ft_stacklast(*alst);//accedemos al ultimo nodo de la lista
-	/* if last is NULL, there is no list, so we set the list pointer
-	* to point to the new element
-	*/
-	if (!last)
+	if (!*alst)
 		*alst = new;
-	/* we set the last's next variable to point to the new element
-	*/
-	last->next = new;
+	else
+	{
+		last = ft_stacklast(*alst);//accedemos al ultimo nodo de la lista
+		/* if last is NULL, there is no list, so we set the list pointer
+		* to point to the new element
+		*/
+		//TINENES QUE HACER AQUI LA RESRRVA DE MEMORIA
+		//SI NO EXISTE CREAS LA LISTA
+		/* we set the last's next variable to point to the new element
+		*/
+		last->next = new;
+	}
 }
