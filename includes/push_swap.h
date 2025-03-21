@@ -7,6 +7,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdbool.h>
 
 
 typedef struct  s_stack
@@ -27,5 +28,10 @@ int main(int argc, char **argv);
 void	ft_error();
 int	ft_check_duplicates(t_stack **stack_a);
 int	init_stack(int argc, char **argv, t_stack **stack);
+int	ft_check_vacio(char **nums);
+void	pa(t_stack **stack_a, t_stack **stack_b, bool flag);
+void	pb(t_stack **stack_b, t_stack **stack_a, bool flag);
+void	ft_stackadd_front(t_stack **stack, t_stack *new);
+
 
 #endif

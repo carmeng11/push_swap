@@ -5,9 +5,10 @@ CFLAGS      = -g -Wall -Werror -Wextra -I./includes -I libft -I printf
 LIBFT_DIR   = ./libft
 PRINT_DIR   = ./printf
 LIBS        = -L$(LIBFT_DIR) -lft -L$(PRINT_DIR) -lftprintf
-SRCS        = src/main.c src/ft_stackadd_back.c src/ft_stacklast.c src/ft_stacknew.c \
-              src/ft_stacksize.c src/ft_error.c src/ft_check_duplicates.c \
-			  src/ft_atoi_push.c src/ft_stackclear.c
+SRCS        = src/main.c stacks/ft_stackadd_back.c stacks/ft_stacklast.c stacks/ft_stacknew.c \
+              stacks/ft_stacksize.c src/ft_error.c src/ft_check_duplicates.c \
+			  src/ft_atoi_push.c stacks/ft_stackclear.c stacks/ft_stackadd_front.c \
+			  src/ft_utils_push.c
 # src/ft_stackdelone.c
 
 OBJS         = $(SRCS:.c=.o)
