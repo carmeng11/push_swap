@@ -1,25 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_stackadd_back.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/21 16:56:45 by cagomez-          #+#    #+#             */
+/*   Updated: 2025/03/21 16:57:22 by cagomez-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void ft_stackadd_back(t_stack **alst, t_stack *new) //añade el nodo new al final de la lista
+void ft_stackadd_back(t_stack **stack, t_stack *new)
 {
 	t_stack *last;
 	
 	if (new == NULL)
-		return ;
-	/* using ft_lstlast to get the last element of the list
-	*/
-	if (!*alst)
-		*alst = new;
+		return;
+	if (!*stack)
+		*stack = new;
 	else
 	{
-		last = ft_stacklast(*alst);//accedemos al ultimo nodo de la lista
-		/* if last is NULL, there is no list, so we set the list pointer
-		* to point to the new element
-		*/
-		//TINENES QUE HACER AQUI LA RESRRVA DE MEMORIA
-		//SI NO EXISTE CREAS LA LISTA
-		/* we set the last's next variable to point to the new element
-		*/
+		last = ft_stacklast(*stack);
 		last->next = new;
 	}
 }

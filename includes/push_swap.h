@@ -23,14 +23,9 @@ int ft_stacksize(t_stack *stack);
 void ft_stackdelone(t_stack *stack, void (*del)(void *));
 void	ft_stackclear(t_stack **stack);
 int	ft_atoi_push(char *str);
-int	ft_ckeck_atoi_push(char *str);
 int main(int argc, char **argv);
 void	ft_error();
-//int ft_check_duplicates(int argc, char **argv);
 int	ft_check_duplicates(t_stack **stack_a);
-int	ft_atoi_push(char *str);
 int	init_stack(int argc, char **argv, t_stack **stack);
-//int	**init_stack(int argc, char **argv);
-
 
 #endif

@@ -1,45 +1,25 @@
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_stacknew.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/21 16:54:30 by cagomez-          #+#    #+#             */
+/*   Updated: 2025/03/21 16:55:16 by cagomez-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-// t_stack *ft_lstnew(void *content) //duda ponemos int n
-// {
-//     /* declaring the new list element
-//      */
-//     t_stack *elem;
-    
-//     /* allocating the memory for the new element
-//      */
-//     elem = malloc(sizeof(t_stack));
-//     if (!elem)
-//         return (NULL);
-//     /* setting the content of the new element
-//      * to the 'content' parameter
-//      * and setting the 'next' to NULL
-//      */
-//     elem->content = content;
-//     elem->next = NULL;
-//     /* finally, we return the created element
-//      */
-//     return (elem);
-// }
+#include "push_swap.h"
 
 t_stack *ft_stacknew(int n) //duda ponemos int n
 {
-    /* declaring the new list element
-     */
-    t_stack *elem;
-    
-    /* allocating the memory for the new element
-     */
-    elem = malloc(sizeof(t_stack));
-    if (!elem)
-        return (NULL);
-    /* setting the content of the new element
-     * to the 'content' parameter
-     * and setting the 'next' to NULL
-     */
-    elem->n = n;
-    elem->next = NULL;
-    /* finally, we return the created element
-     */
-    return (elem);
+	t_stack *elem;
+
+	elem = malloc(sizeof(t_stack));
+	if (!elem)
+		return (NULL);
+	elem->n = n;
+	elem->next = NULL;
+	return (elem);
 }

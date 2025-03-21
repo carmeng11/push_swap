@@ -7,3 +7,13 @@ void	ft_error()
 	//exit(1) como lo tiene Mac
 	//return (1);
 }
+// int	ft_check_void(char **argv)
+// {
+// 	int	j;
+
+// 	j = 0;
+// 	if (nums[j] == (void *)0)
+// 			return (ft_error(), 1);
+// 	return (0);
+// }
+
