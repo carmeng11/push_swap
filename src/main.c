@@ -11,37 +11,27 @@
 /* ************************************************************************** */
 #include "push_swap.h"
 
-
-// void	push_swap(t_list **stack_a, t_list **stack_b)
-// {
-// 	int	len;
-
-// 	check_dup_parse(stack_a);
-// 	posicion_number(stack_a);
-// 	len = count_argv(*stack_a);
-// 	if (!is_ordered_list(stack_a))
-// 	{
-// 		if (len == 2)
-// 			sa(stack_a, 1);
-// 		else if (len == 3)
-// 			three_stack(stack_a);
-// 		else if (len == 4)
-// 			four_stack(stack_a, stack_b);
-// 		else if (len == 5)
-// 			five_stack(stack_a, stack_b);
-// 		else
-// 			k_sort(stack_a, stack_b, len);
-// 	}
-// }
+int	ft_check_vacio(char **nums)
+{
+	
+	if (*nums == (void *)0)
+			return (ft_error(), 1);
+	return (0);
+}
 
 
-int	init_stack(int argc, char **argv, t_stack **stack)
+t_stack	**init_stack(int argc, char **argv, t_stack **stack)
 {
 	int		i;
 	int		j;
 	t_stack	*new;
 	int		n;
 	char	**nums;
+	//t_stack	*stack_b;
+	//stack_b = NULL;
+	/*stack_b = malloc(sizeof(t_stack));
+	if (!*stack_b || !stack_b)
+		return (NULL);*/
 
 	nums = NULL;
 	i = 0;
@@ -52,19 +42,21 @@ int	init_stack(int argc, char **argv, t_stack **stack)
 		ft_check_vacio(nums);
 		while (nums[j])
 		{
-			//ft_printf("%s\n", nums[j]);
+			ft_printf("Contenido del array antes del atoi %s\n", nums[j]);
 			n = ft_atoi_push(nums[j]);
 			new = ft_stacknew(n);
 			ft_stackadd_back(stack, new);
-			ft_printf("Imprimo nodos: %d\n", new->n);
 			free(nums[j]);
+			printf("Imprimo el contenido del nodo: %d\n", new->n);
 			j++;
 		}
 		free(nums);
 		//i++;
 	}
 	ft_check_duplicates(stack);
-	return (1);
+	//pa(stack, &stack_b, 1);
+	//printf("%d", new->n);me impime el último nodo
+	return (stack);
 }
 
 
@@ -72,11 +64,26 @@ int main(int argc, char **argv)
 {
 	t_stack *stack_a;
 	t_stack *stack_b;
+	t_stack	**stack_a_num;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	init_stack(argc, argv, &stack_a);
-	void	pa(t_stack **stack_a, t_stack **stack_b, bool flag);
-	//ft_printf("Imprimo nodos: %s\n", &stack_b->n);
+
+	//init_stack(argc, argv, &stack_a);
+	stack_a_num = init_stack(argc, argv, &stack_a);//declarando variable
+	//ft_stackclear(&stack_a);//si se limpia aqui no hade el mvto
+	//ra(stack_a_num, 1);//si imprimo los num da leaks de memoria
+	//sa(stack_a_num, 1);
+	//rra(stack_a_num, 1);
+	sa(stack_a_num, 1);
+	//pb(&stack_b, stack_a_num, 1);
+	ft_stackclear(&stack_a); //es necesario para que no de leak de memoria en rotate pero lo da en push
+	//ft_stackclear(&stack_b); No soluciona el leak de memoria en el stack_b
+	//ft_stackclear(*(&stack_a_num)); //se puede omitir
+	//pa(stack_a_num, &stack_b, 1);
+	//pb(&stack_b, stack_a_num, 1);
+	//pa(init_stack(argc, argv, &stack_a), &stack_b, 1);//funcion dentro de funcion
+	//pb(&stack_b,  init_stack(argc, argv, &stack_a), 1);
+
 	return 0;
 }
