@@ -6,7 +6,7 @@
 /*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 16:56:40 by cagomez-          #+#    #+#             */
-/*   Updated: 2025/03/21 16:56:41 by cagomez-         ###   ########.fr       */
+/*   Updated: 2025/03/28 19:08:41 by cagomez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ int	ft_atoi_push(char *str)
 	}
 	return (sign * result);
 }
-int	ft_ckeck_atoi_push(char *str)
+
+int	ft_check_atoi_push(char *str)
 {
 	long long int	result = 0;
 	int	sign = 1;
@@ -50,10 +51,10 @@ int	ft_ckeck_atoi_push(char *str)
 	while (*str)
 	{
 		if (!(ft_str_isdigit(str)))
-			return (ft_error(), 1);
+			return (0);
 		result = result * 10 + *str - '0';
 		if ((sign * result) < INT_MIN || (sign * result) > INT_MAX)
-			return (ft_error(), 1);
+			return (0);
 		str++;
 	}
 	return (1);

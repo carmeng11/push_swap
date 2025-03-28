@@ -6,7 +6,7 @@
 /*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 20:11:20 by cagomez-          #+#    #+#             */
-/*   Updated: 2025/03/25 19:13:13 by cagomez-         ###   ########.fr       */
+/*   Updated: 2025/03/28 18:55:08 by cagomez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ void    ra(t_stack **stack_a, int flag)
 		ft_printf("ra\n");
 		ft_printf("Primer nodo de stack_a:\n%d\n", (*stack_a)->n);
 		// ft_printf("Primer nodo de stack_a:\n%d\n", (*stack_a)->next->n);
-		while ((*stack_a)->next)
+		temp = *stack_a;
+		while ((temp)->next)
 		{
-			(*stack_a) = (*stack_a)->next;
-			ft_printf("Siguientes nodos: \n%d\n", (*stack_a)->n);
+			(temp) = (temp)->next;
+			ft_printf("Siguientes nodos: \n%d\n", (temp)->n);
 		}
 	}
 }
