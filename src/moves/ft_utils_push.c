@@ -6,7 +6,7 @@
 /*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 18:24:24 by cagomez-          #+#    #+#             */
-/*   Updated: 2025/03/26 21:23:55 by cagomez-         ###   ########.fr       */
+/*   Updated: 2025/03/28 20:30:24 by cagomez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@ void	pa(t_stack **stack_a, t_stack **stack_b, int flag)
 	*stack_b = (*stack_b)->next;
 	ft_stackadd_front(stack_a, temp);
 	if (flag == 1)
+	{
 		ft_printf("pa\n");
+		temp = *stack_a;
+		print_stack(&temp);
+	}
 }
 
 
@@ -37,7 +41,11 @@ void	pb(t_stack **stack_b, t_stack **stack_a, int flag)
 	*stack_a = (*stack_a)->next;
 	ft_stackadd_front(stack_b, temp);
 	if (flag == 1)
+	{
 		ft_printf("pb\n");
+		temp = *stack_a;
+		print_stack(&temp);
+	}
 }
 
 // void	ft_stackadd_front(t_stack **stack, t_stack *new)

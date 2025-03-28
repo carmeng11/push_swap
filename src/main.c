@@ -93,9 +93,10 @@ int main(int argc, char **argv)
 		ft_error();
 	}
 	//ft_stackclear(&stack_a);//si se limpia aqui no hade el mvto
-	ra(&stack_a, 1);//si imprimo los num da leaks de memoria
-	sa(&stack_a, 1);
-	//rra(stack_a_num, 1);
+	//ra(&stack_a, 1);//si imprimo los num da leaks de memoria
+	//rb(&stack_b, 1);
+	//sa(&stack_a, 1);
+	rra(&stack_a, 1);
 	//sa(stack_a_num, 1);
 	//pb(&stack_b, stack_a_num, 1);
 	ft_stackclear(&stack_a); //es necesario para que no de leak de memoria en rotate pero lo da en push

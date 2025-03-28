@@ -6,7 +6,7 @@
 /*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 20:11:20 by cagomez-          #+#    #+#             */
-/*   Updated: 2025/03/28 18:55:08 by cagomez-         ###   ########.fr       */
+/*   Updated: 2025/03/28 20:33:29 by cagomez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,8 @@ void    ra(t_stack **stack_a, int flag)
     if (flag == 1)
 	{
 		ft_printf("ra\n");
-		ft_printf("Primer nodo de stack_a:\n%d\n", (*stack_a)->n);
-		// ft_printf("Primer nodo de stack_a:\n%d\n", (*stack_a)->next->n);
 		temp = *stack_a;
-		while ((temp)->next)
-		{
-			(temp) = (temp)->next;
-			ft_printf("Siguientes nodos: \n%d\n", (temp)->n);
-		}
+		print_stack(&temp);
 	}
 }
 
@@ -50,13 +44,8 @@ void    rb(t_stack **stack_b, int flag)
     if (flag == 1)
 	{
 		ft_printf("rb\n");
-		ft_printf("Primer nodo de stack_a:\n%d\n", (*stack_b)->n);
-		// ft_printf("Primer nodo de stack_a:\n%d\n", (*stack_a)->next->n);
-		while ((*stack_b)->next)
-		{
-			(*stack_b) = (*stack_b)->next;
-			ft_printf("Siguientes nodos: \n%d\n", (*stack_b)->n);
-		}
+		temp = *stack_b;
+		print_stack(&temp);
 	}
 }
 

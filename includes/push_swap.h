@@ -45,6 +45,7 @@ void    rra(t_stack **stack_a, int flag);
 void    ft_stackdelete(t_stack **stack, int compare);
 void	print_list(t_stack *list);
 void  ft_stackadd_front(t_stack **stack, t_stack *new);
+void print_stack(t_stack **stack);
 //static void	push_swap(t_stack *stack_a, t_stack *stack_b);
 
 #endif

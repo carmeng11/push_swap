@@ -6,42 +6,13 @@
 /*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 20:11:20 by cagomez-          #+#    #+#             */
-/*   Updated: 2025/03/28 18:18:46 by cagomez-         ###   ########.fr       */
+/*   Updated: 2025/03/28 20:55:47 by cagomez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-
-// void    rra(t_stack **stack_a, int flag)
-// {
-// 	t_stack *temp;
-// 	t_stack *last;
-
-// 	if (*stack_a == NULL || (*stack_a)->next == NULL)
-// 		return ;
-// 	temp = *stack_a;
-// 	last = ft_stacklast(*stack_a);
-// 	ft_stackadd_front(stack_a, last);
-// 	second_last = ft_stacklast(*stack_a);
-// 	*stack_a = last;
-
-// 	if (flag == 1)
-// 	{
-// 		ft_printf("sa\n");
-// 		ft_printf("Primer nodo de stack_a:\n%d\n", (*stack_a)->n);
-// 		// ft_printf("Primer nodo de stack_a:\n%d\n", (*stack_a)->next->n);
-// 		while ((*stack_a)->next)
-// 		{
-// 			(*stack_a) = (*stack_a)->next;
-// 			ft_printf("Siguientes nodos: \n%d\n", (*stack_a)->n);
-// 		}
-// 		(*stack_a)->next = NULL;
-// 	}
-// }
-
-
+//funcion Pablo
 // void	rra(t_stack **stack_a, int flag)
 // {
 // 	t_stack	*temp_last;
@@ -72,7 +43,7 @@
 //         (*stack_a)->next = NULL;
 //     }
 // }
-
+//funciona mia
 // void	rra(t_stack **stack_a, int flag)
 // {
 // 	t_stack	*temp; //temp = 1
@@ -82,54 +53,40 @@
 	
 // 	while (temp->next)
 // 	{
-// 		temp2 = temp; //temp2 ahora vale 1
+// 		temp2 = temp;//temp2 ahora vale 1
 // 		temp = temp->next; //temp pasa a valer 2
 // 	}
 // 	//cuando sale del bucle temp2 vale 4 y temp 5
-// 	ft_stackadd_front(stack_a, temp);
 // 	temp2->next = NULL;
-// 	temp->next = (*stack_a);
-// 	(*stack_a) = temp;
+// 	ft_stackadd_front(stack_a, temp);
 // 	if (flag == 1)
-// 	  {
-// 		ft_printf("sa\n");
-//     	ft_printf("Primer nodo de stack_a:\n%d\n", (*stack_a)->n);
-// 		// ft_printf("Primer nodo de stack_a:\n%d\n", (*stack_a)->next->n);
-// 		while ((*stack_a)->next)
-//         {
-// 			(*stack_a) = (*stack_a)->next;
-// 			ft_printf("Siguientes nodos: \n%d\n", (*stack_a)->n);
-// 		}
-//         (*stack_a)->next = NULL;
-//     }
+// 	{
+// 		ft_printf("rra\n");
+// 		temp = *stack_a;
+// 		print_stack(&temp);
+// 	}
 // }
 
-void	rra(t_stack **stack_a, int flag)
-{
-	t_stack	*temp; //temp = 1
-	t_stack	*last;
+// void	rra(t_stack **stack_a, int flag)
+// {
+// 	t_stack	*temp; //temp = 1
+// 	t_stack	*last;
 
-	if (*stack_a == NULL || (*stack_a)->next == NULL)
-		return ;
+// 	if (*stack_a == NULL || (*stack_a)->next == NULL)
+// 		return ;
 
-	last = ft_stacklast(*stack_a); //tenemos el 5
-	temp = *stack_a;
+// 	last = ft_stacklast(*stack_a); //tenemos el 5
+// 	temp = *stack_a;
 	
-	while (temp->next != last)
-		temp = temp->next; //aqui ya llego hasta el 4
-	temp->next = NULL; //el siguiente al 4 es nulo
-	ft_stackadd_front(stack_a, last);
+// 	while (temp->next != last)
+// 		temp = temp->next; //aqui ya llego hasta el 4
+// 	temp->next = NULL; //el siguiente al 4 es nulo
+// 	ft_stackadd_front(stack_a, last);
 	
-	if (flag == 1)
-	  {
-		ft_printf("rra\n");
-    	ft_printf("Primer nodo de stack_a:\n%d\n", (*stack_a)->n);
-		// ft_printf("Primer nodo de stack_a:\n%d\n", (*stack_a)->next->n);
-		while ((*stack_a)->next)
-        {
-			(*stack_a) = (*stack_a)->next;
-			ft_printf("Siguientes nodos: \n%d\n", (*stack_a)->n);
-		}
-        (*stack_a)->next = NULL;
-    }
-}
+// 	if (flag == 1)
+// 	{
+// 		ft_printf("rra\n");
+// 		temp = *stack_a;
+// 		print_stack(&temp);
+//   }
+// }
