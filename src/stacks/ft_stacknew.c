@@ -6,7 +6,7 @@
 /*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 16:54:30 by cagomez-          #+#    #+#             */
-/*   Updated: 2025/03/21 16:55:16 by cagomez-         ###   ########.fr       */
+/*   Updated: 2025/03/31 19:24:50 by cagomez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,4 @@ t_stack *ft_stacknew(int n) //duda ponemos int n
 	elem->next = NULL;
 	return (elem);
 }
+

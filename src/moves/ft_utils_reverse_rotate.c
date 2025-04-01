@@ -6,7 +6,7 @@
 /*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 20:11:20 by cagomez-          #+#    #+#             */
-/*   Updated: 2025/03/28 20:55:47 by cagomez-         ###   ########.fr       */
+/*   Updated: 2025/03/31 16:51:37 by cagomez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,28 +44,28 @@
 //     }
 // }
 //funciona mia
-// void	rra(t_stack **stack_a, int flag)
-// {
-// 	t_stack	*temp; //temp = 1
-// 	t_stack	*temp2;
+void	rra(t_stack **stack_a, int flag)
+{
+	t_stack	*temp; //temp = 1
+	t_stack	*temp2;
 
-// 	temp = *stack_a;
+	temp = *stack_a;
 	
-// 	while (temp->next)
-// 	{
-// 		temp2 = temp;//temp2 ahora vale 1
-// 		temp = temp->next; //temp pasa a valer 2
-// 	}
-// 	//cuando sale del bucle temp2 vale 4 y temp 5
-// 	temp2->next = NULL;
-// 	ft_stackadd_front(stack_a, temp);
-// 	if (flag == 1)
-// 	{
-// 		ft_printf("rra\n");
-// 		temp = *stack_a;
-// 		print_stack(&temp);
-// 	}
-// }
+	while (temp->next)
+	{
+		temp2 = temp;//temp2 ahora vale 1
+		temp = temp->next; //temp pasa a valer 2
+	}
+	//cuando sale del bucle temp2 vale 4 y temp 5
+	temp2->next = NULL;
+	ft_stackadd_front(stack_a, temp);
+	if (flag == 1)
+	{
+		ft_printf("rra\n");
+		temp = *stack_a;
+		print_stack(&temp);
+	}
+}
 
 // void	rra(t_stack **stack_a, int flag)
 // {

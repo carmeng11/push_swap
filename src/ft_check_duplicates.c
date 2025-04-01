@@ -24,7 +24,11 @@ int	ft_check_duplicates(t_stack **stack_a)
 		while (temp != NULL)
 		{
 			if (current->n == temp->n)
-				return (ft_error(), 1);
+			{
+				//return (ft_error(), 1);
+				ft_error_stack(stack_a);
+			}
+	
 			temp = temp->next;
 		}
 		current = current->next;

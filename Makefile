@@ -14,7 +14,7 @@ SRCS        = src/main.c src/stacks/ft_stackadd_back.c src/stacks/ft_stacklast.c
 			src/moves/ft_utils_rotate.c src/moves/ft_utils_swap.c \
 			src/stacks/ft_stackadd_front.c src/stacks/ft_stackdelete.c \
 			src/stacks/ft_stackdelone.c src/moves/ft_utils_reverse_rotate.c \
-			src/moves/print_stack.c
+			src/moves/print_stack.c src/ft_utils_alg.c
 # src/ft_stackdelone.c
 
 OBJS         = $(SRCS:.c=.o)
