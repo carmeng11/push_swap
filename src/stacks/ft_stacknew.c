@@ -6,15 +6,15 @@
 /*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 16:54:30 by cagomez-          #+#    #+#             */
-/*   Updated: 2025/03/31 19:24:50 by cagomez-         ###   ########.fr       */
+/*   Updated: 2025/04/10 18:11:33 by cagomez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *ft_stacknew(int n) //duda ponemos int n
+t_stack	*ft_stacknew(int n)
 {
-	t_stack *elem;
+	t_stack	*elem;
 
 	elem = malloc(sizeof(t_stack));
 	if (!elem)
@@ -23,4 +23,3 @@ t_stack *ft_stacknew(int n) //duda ponemos int n
 	elem->next = NULL;
 	return (elem);
 }
-
