@@ -28,7 +28,7 @@ typedef struct s_stack
 }	t_stack;
 
 int		ft_atoi_push(char *str, t_stack **stack);
-int		ft_check_atoi_push(char *str, t_stack **stack, char **nums);
+int		ft_check_atoi_push(char *str);
 int		main(int argc, char **argv);
 int		ft_check_duplicates(t_stack **stack_a);
 int		init_stack(int argc, char **argv, t_stack **stack);
@@ -50,11 +50,9 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 
 /* errors  */
 
-void	ft_error(t_stack **stack);
 void	ft_error_str(char *str, t_stack **stack);
 void	ft_error_strmat(char **str, t_stack **stack);
 void	ft_error_stack(t_stack **stack);
-int		ft_check_vacio(char **nums, t_stack **stack);
 
 /*stacks*/
 

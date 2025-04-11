@@ -2,11 +2,11 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+        
+/*                                                    +:+ +:+
 	+:+     */
-/*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+      
+/*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+
 	+#+        */
-/*                                                +#+#+#+#+#+  
+/*                                                +#+#+#+#+#+
 	+#+           */
 /*   Created: 2025/03/21 16:59:28 by cagomez-          #+#    #+#             */
 /*   Updated: 2025/03/21 16:59:28 by cagomez-         ###   ########.fr       */
@@ -35,7 +35,7 @@ static void	push_swap(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-int	ft_check_vacio(char **nums, t_stack **stack)
+static int	ft_check_vacio(char **nums, t_stack **stack)
 {
 	if (*nums == (void *)0)
 		ft_error_strmat(nums, stack);
@@ -44,9 +44,9 @@ int	ft_check_vacio(char **nums, t_stack **stack)
 
 int	init_stack(int argc, char **argv, t_stack **stack)
 {
-	int i;
-	int j;
-	char **nums;
+	int		i;
+	int		j;
+	char	**nums;
 
 	nums = NULL;
 	i = 0;
@@ -57,7 +57,7 @@ int	init_stack(int argc, char **argv, t_stack **stack)
 		ft_check_vacio(nums, stack);
 		while (nums[j])
 		{
-			if (!ft_check_atoi_push(nums[j], stack, nums))
+			if (!ft_check_atoi_push(nums[j]))
 				ft_error_strmat(nums, stack);
 			ft_stackadd_back(stack, ft_stacknew(ft_atoi_push(nums[j], stack)));
 			free(nums[j]);
@@ -71,13 +71,13 @@ int	init_stack(int argc, char **argv, t_stack **stack)
 
 int	main(int argc, char **argv)
 {
-	t_stack *stack_a;
-	t_stack *stack_b;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	if (!init_stack(argc, argv, &stack_a))
-		ft_error(&stack_a);
+		ft_error_stack(&stack_a);
 	push_swap(stack_a, stack_b);
 	ft_stackclear(&stack_a);
 	ft_stackclear(&stack_b);

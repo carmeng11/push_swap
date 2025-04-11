@@ -6,7 +6,7 @@
 /*   By: cagomez- <cagomez-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 16:56:40 by cagomez-          #+#    #+#             */
-/*   Updated: 2025/04/10 18:25:35 by cagomez-         ###   ########.fr       */
+/*   Updated: 2025/04/11 17:44:55 by cagomez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ int	ft_atoi_push(char *str, t_stack **stack)
 
 	result = 0;
 	sign = 1;
-	if (str)
-	{
-	}
 	if (*str == '-' || *str == '+')
 	{
 		if (*str == '-')
@@ -34,13 +31,13 @@ int	ft_atoi_push(char *str, t_stack **stack)
 			ft_error_str(str, stack);
 		result = result * 10 + *str - '0';
 		if ((sign * result) < INT_MIN || (sign * result) > INT_MAX)
-			return (ft_error(stack), 1);
+			return (ft_error_stack(stack), 1);
 		str++;
 	}
 	return (sign * result);
 }
 
-int	ft_check_atoi_push(char *str, t_stack **stack, char **nums)
+int	ft_check_atoi_push(char *str)
 {
 	long long int	result;
 	int				sign;
@@ -53,12 +50,12 @@ int	ft_check_atoi_push(char *str, t_stack **stack, char **nums)
 			sign = -1;
 		str++;
 	}
+	if (!*str)
+		return (0);
 	while (*str)
 	{
 		if (!(ft_str_isdigit(str)))
-		{
-			ft_error_strmat(nums, stack);
-		}
+			return (0);
 		result = result * 10 + *str - '0';
 		if ((sign * result) < INT_MIN || (sign * result) > INT_MAX)
 			return (0);
