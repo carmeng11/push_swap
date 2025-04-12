@@ -27,11 +27,7 @@ int	ft_atoi_push(char *str, t_stack **stack)
 	}
 	while (*str)
 	{
-		if (!(ft_str_isdigit(str)))
-			ft_error_str(str, stack);
 		result = result * 10 + *str - '0';
-		if ((sign * result) < INT_MIN || (sign * result) > INT_MAX)
-			return (ft_error_stack(stack), 1);
 		str++;
 	}
 	return (sign * result);
