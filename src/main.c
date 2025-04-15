@@ -35,7 +35,7 @@ static void	push_swap(t_stack *stack_a, t_stack *stack_b)
 	}
 }
 
-static int	ft_check_vacio(char **nums, t_stack **stack)
+static int	ft_check_empty(char **nums, t_stack **stack)
 {
 	if (*nums == (void *)0)
 		ft_error_strmat(nums, stack);
@@ -54,7 +54,7 @@ int	init_stack(int argc, char **argv, t_stack **stack)
 	{
 		j = 0;
 		nums = ft_split(argv[i], ' ');
-		ft_check_vacio(nums, stack);
+		ft_check_empty(nums, stack);
 		while (nums[j])
 		{
 			if (!ft_check_atoi_push(nums[j]))
